@@ -36,8 +36,8 @@ jobs:
     - name: Register Problem Matcher for TSC
       run: echo "##[add-matcher].github/tsc.json"
 
-    - name: Tests
-      run:  npm test -- --no-lint
+    #- name: Tests
+    #  run:  npm test -- --no-lint
 
     - name: Linter
       run:  npm run lint:ci
@@ -46,5 +46,7 @@ jobs:
       run: npm install --no-save --no-package-lock playwright
 
     - name: Validate the browser can import TypeScript
-      run: gulp test-browser-integration
+      run: |
+        npm install gulp -g
+        gulp test-browser-integration
 
