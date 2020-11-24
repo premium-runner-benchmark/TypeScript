@@ -62,10 +62,10 @@ jobs:
     - name: Adding playwright
       run: npm install --no-save --no-package-lock playwright
 
-    - name: Validate the browser can import TypeScript
-      run: |
-        npm install gulp -g
-        gulp test-browser-integration
+    #- name: Validate the browser can import TypeScript
+    #  run: |
+    #    npm install gulp -g
+    #    gulp test-browser-integration
 
   #### Collect/upload stats
     - run: date -R >> ${{ runner.temp }}/${{ env.timingFile }}
